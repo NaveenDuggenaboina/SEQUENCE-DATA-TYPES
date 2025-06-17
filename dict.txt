@@ -1,0 +1,94 @@
+=====================================================
+	V) Dict Categeory Data Types ( Collection Data Types or Data Structures)
+	=====================================================
+Properties 
+---------------------------
+=>'dict' is one of the pre-defined class and treated as Dict Data Type.
+=>The purpose of dict data type is that "To store (Key,value) in single variable"
+=>In (Key,Value), the values of Key is Unique and Values of Value may or may not be unique.
+=>The (Key,value) must be organized or stored in the object of dict within Curly Braces {} and  they separated by comma.
+=>An object of dict does not support Indexing and Slicing bcoz Values of Key itself considered as Indices.
+=>In the object of dict, Values of Key are treated as Immutable and Values of Value  are treated as mutable.
+=>Originally an object of dict is mutable bcoz we can add (Key,Value) externally.
+=>We have two types of dict objects. They are
+			a) Empty dict
+			b) Non-empty dict
+-------------------------
+a) Empty dict
+-------------------------
+=>Empty dict is one, which does not contain any (Key,Value) and whose length is 0
+=>Syntax:-          dictobj1= { }
+				or
+			    dictobj=dict()
+			    
+=>Syntax for adding (Key,Value) to empty dict:
+    ----------------------------------------------------------------
+		dictobj[Key1]=Val1
+		dictobj[Key2]=Val2
+		---------------------------
+		dictobj[Key-n]=Val-n
+Here Key1,Key2...Key-n are called Values of Key and They must be Unique
+Here Val1, Val2...Val-n are called Values of Value and They may or may not be unique.
+-----------------------------------------------------------------------------------------------------------------------
+b) Non-Empty dict
+-----------------------------
+=>Non-Empty dict is one, which contains  (Key,Value) and whose length is >0
+=>Syntax:-          dictobj1= { Key1:Val1,Key2:Val2......Key-n:Valn}
+			
+Here Key1,Key2...Key-n are called Values of Key and They must be Unique
+Here Val1, Val2...Val-n are called Values of Value and They may or may not be unique.	
+=================================================================
+Examples:
+-----------------
+>>> d1={10:"Python",20:"Data Sci",30:"Django"}
+>>> print(d1,type(d1))----------{10: 'Python', 20: 'Data Sci', 30: 'Django'} <class 'dict'>
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2,type(d2))------------{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4} <class 'dict'>
+>>> len(d1)--------------3
+>>> len(d2)------------4
+-------------------------------------------------
+>>> d3={}
+>>> print(d3,type(d3))------------{} <class 'dict'>
+>>> len(d3)-------------0
+>>> d4=dict()
+>>> print(d4,type(d4))-------------{} <class 'dict'>
+>>> len(d4)---------------0
+------------------------------------------------------------------------
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2)----------------------------------{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4}
+>>> d2[0]----------------------------------------KeyError: 0
+>>> d2[10]-------------------------------------3.4
+>>> d2[10]=10.44
+>>> print(d2)-------------------------------{10: 10.44, 20: 4.5, 30: 5.6, 40: 3.4}
+-------------------------------------------------------------------------------------
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2,type(d2),id(d2))----{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4} <class 'dict'> 2090750380736
+>>> d2[50]=5.5
+>>> print(d2,type(d2),id(d2))---{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4, 50: 5.5} <class 'dict'>														2090750380736
+-------------------------------------------------------------------------------------------------------------------------
+>>> d3={}
+>>> print(d3,type(d3),id(d3))-------------------{} <class 'dict'> 2090750332992
+>>> d3["Python"]=1
+>>> d3["Java"]=3
+>>> d3["C"]=2
+>>> d3["GO"]=1
+>>> print(d3,type(d3),id(d3))-----{'Python': 1, 'Java': 3, 'C': 2, 'GO': 1} <class 'dict'>																2090750332992
+-------------------------------------------------------------------------------------------------------
+>>> d4=dict()
+>>> print(d4,type(d4),id(d4))---------------{} <class 'dict'> 2090754532032
+>>> d4[10]="Apple"
+>>> d4[20]="Mango"
+>>> d4[30]="Kiwi"
+>>> d4[40]="Sberry"
+>>> d4[50]="Orange"
+>>> print(d4,type(d4),id(d4))---{10: 'Apple', 20: 'Mango', 30: 'Kiwi', 40: 'Sberry', 50: 'Orange'}								<class 'dict'> 2090754532032
+>>> d4[10]="Guava"
+>>> print(d4,type(d4),id(d4))----{10: 'Guava', 20: 'Mango', 30: 'Kiwi', 40: 'Sberry', 50: 'Orange'} 
+								<class 'dict'> 2090754532032
+--------------------------------------------------------------------------------------
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2,type(d2),id(d2))---{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4} <class 'dict'> 2090754531520
+>>> d2[50]=1.2
+>>> print(d2,type(d2),id(d2))---{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4, 50: 1.2} <class 'dict'> 
+                                                                    2090754531520
+--------------------------------------------------------------------------------------------------------------------------
