@@ -1,0 +1,6 @@
+# Requirements pinned for Python 3.10 compatibility
+streamlit>=1.20.0
+numpy>=1.21.0
+sympy>=1.10.0
+scipy>=1.8.0
+pytest>=7.0.0
