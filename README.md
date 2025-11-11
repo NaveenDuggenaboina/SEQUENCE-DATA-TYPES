@@ -36,3 +36,7 @@ pytest -q
 If package installation fails, try installing packages individually (for example `pip install streamlit sympy numpy scipy`) and ensure you're using Python 3.10.
 
 If you want improvements (better matrix UI, more symbolic features, expression history, or keyboard-friendly inputs), tell me which area to expand next.
+
+New example added:
+
+- `Quadratic Solver` — available from the app sidebar. Enter coefficients a, b, c and it returns real or complex roots and the discriminant.

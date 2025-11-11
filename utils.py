@@ -105,3 +105,30 @@ def symbolic_derivative(expr_str: str):
 def symbolic_integral(expr_str: str):
     expr = sp.sympify(expr_str)
     return sp.integrate(expr, x)
+
+
+# Quadratic solver
+def quadratic_solver(a: float, b: float, c: float):
+    """Return the roots of ax^2 + bx + c = 0.
+
+    Returns a tuple (r1, r2) where r1 and r2 may be real or complex floats.
+    """
+    if a == 0:
+        # linear equation bx + c = 0
+        if b == 0:
+            raise ValueError("Not an equation (a and b both zero)")
+        return (-c / b, )
+    disc = b * b - 4 * a * c
+    if disc >= 0:
+        sqrt_d = math.sqrt(disc)
+        r1 = (-b + sqrt_d) / (2 * a)
+        r2 = (-b - sqrt_d) / (2 * a)
+        return (r1, r2)
+    else:
+        # complex roots
+        sqrt_d = complex(0, math.sqrt(-disc))
+        r1 = complex(-b, 0) + sqrt_d
+        r1 = r1 / (2 * a)
+        r2 = complex(-b, 0) - sqrt_d
+        r2 = r2 / (2 * a)
+        return (r1, r2)

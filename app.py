@@ -4,6 +4,7 @@ from utils import (
     add, subtract, multiply, divide,
     trig_func, log_exp, complex_ops,
     parse_matrix, matrix_ops, symbolic_derivative, symbolic_integral,
+    quadratic_solver,
 )
 
 st.set_page_config(page_title="Scientific Calculator", layout="wide")
@@ -17,6 +18,7 @@ calc_type = st.sidebar.selectbox("Calculation type", [
     "Log / Exp",
     "Complex Numbers",
     "Matrix Operations",
+    "Quadratic Solver",
     "Symbolic (SymPy)",
 ])
 
@@ -91,6 +93,25 @@ elif calc_type == "Matrix Operations":
             res = matrix_ops(op, A, B)
             st.write("Result:")
             st.write(res)
+        except Exception as e:
+            st.error(e)
+
+# Quadratic Solver
+elif calc_type == "Quadratic Solver":
+    st.header("Quadratic equation solver: ax^2 + bx + c = 0")
+    a = st.number_input("a", value=1.0, format="%.10g")
+    b = st.number_input("b", value=0.0, format="%.10g")
+    c = st.number_input("c", value=0.0, format="%.10g")
+    if st.button("Solve"):
+        try:
+            roots = quadratic_solver(a, b, c)
+            if len(roots) == 1:
+                st.success(f"Linear solution: x = {roots[0]}")
+            else:
+                st.success(f"Roots: x1 = {roots[0]}, x2 = {roots[1]}")
+                disc = b * b - 4 * a * c
+                st.write(f"Discriminant = {disc}")
+                st.write("Type: " + ("real" if disc >= 0 else "complex"))
         except Exception as e:
             st.error(e)
 
